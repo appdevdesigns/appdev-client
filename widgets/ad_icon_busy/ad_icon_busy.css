@@ -1,0 +1,27 @@
+
+
+.ad-icon-busy {
+    width:16px;
+    height:16px;
+    background-position: center;
+    background-repeat:no-repeat;
+    margin:0 auto;
+}
+
+
+.ad-icon-busy-inline {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.ad-icon-busy-circleball-black {
+    background-image:url(circleball_black.gif);
+}
+
+.ad-icon-busy-arrows-black {
+    background-image:url(arrows_black.gif);
+}
+
+.ad-icon-busy-arrows-white {
+    background-image:url(arrows_white.gif);
+}

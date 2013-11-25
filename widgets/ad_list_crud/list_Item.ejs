@@ -1,0 +1,38 @@
+
+    <li class="ad-list-item list-group-item" <%= (el) -> can.data(el, 'ad-model', item) %> ad-list-crud-del-id="<%= item.id %>" >
+ <%
+    var obj = item.attr();
+    var count = 0;
+    for (var o in obj) {
+        count ++;
+
+ 
+        if (count < 7) {
+            if (count == 4) { %>
+        <br>
+ <%       
+            }
+            if (count == 1) {
+            
+                // because the o var will not == the proper name when the 
+                // live binding is triggered, we need to wrapIt in a closure
+                var wrapIt = function (name) {
+ %>
+    <span class="project-title"> <%= item.attr(name) %></span><br>  
+<%  
+                }
+                wrapIt(o);
+            } else {
+            
+                var wrapIt = function (name) {
+ %>
+    <b><%= name %>:</b> <%= item.attr(name) %>,  
+<%  
+                }
+                wrapIt(o);
+            }
+        }
+    }  
+ %>
+
+    </li>

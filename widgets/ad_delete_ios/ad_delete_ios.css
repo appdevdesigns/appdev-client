@@ -1,0 +1,87 @@
+
+/*IOS LIKE DELETE FUNCTION */
+
+.ad-delete-ios-buttons a {
+	line-height:18px !important;
+
+}
+
+.ad-delete-ios-buttons {
+	color:#fff !important;
+	font-size:10px !important;
+	padding: 2px 6px !important;
+	float:right;
+	
+
+}
+
+.ad-delete-ios-delete {
+	width:17px !important;
+	height:17px !important;
+	background-image:url(redminusicon.png);
+	background-position: center top;
+	background-repeat:no-repeat;
+	
+}
+
+
+
+.ad-delete-ios-wrapper {
+	overflow: hidden;
+	margin:0 0 5px;
+	width:99%;
+}
+
+.ad-delete-ios-pane {
+	padding: 0;
+}
+
+.ad-delete-ios-pane_center {
+	overflow: hidden;
+	width:100%;	
+}
+
+.ad-delete-ios-pane__content {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align:left;
+	padding-left:5px;
+}
+
+.fl-selected {
+	background-color:#D9EDF7;
+	
+}
+
+.fl-selected:hover {
+		background-color:#D9EDF7 !important;
+		
+	}
+
+.fl-selected a{
+	color:#08618d !important;
+	
+}
+
+.fl-selected a:hover{
+		color:#08618d !important;
+		
+	}
+
+.ad-delete-ios-pane__content:hover {
+}
+
+.ad-delete-ios-pane_left {
+	float: left;
+	margin:0 0.4em 0 5px;	
+	line-height:18px !important;
+}
+
+.ad-delete-ios-pane_right {
+	/*float: right;*/
+	margin:0 0.25em;	
+}
+
+
+/*IOS LIKE DELETE FUNCTION END*/
