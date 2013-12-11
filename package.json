@@ -1,0 +1,10 @@
+{
+  "name": "appdev-client",
+  "version": "0.0.1",
+  "description": "This is the appdev utilities for client side development.",
+  "keywords": ["appdev-client"],
+  "author": "Johnny Hausman",
+  "dependencies": {},
+  "main": "appdev",
+  "engines": { "node": "0.10" }
+}
