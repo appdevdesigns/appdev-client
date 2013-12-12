@@ -43,6 +43,7 @@ if (typeof window.AD == 'undefined') {
     .then(
             'appdev/model/model.js',
             'appdev/labels/lang.js',
+            'appdev/labels/label.js',
             function($) {
 
 console.log('AD setup done ...');
