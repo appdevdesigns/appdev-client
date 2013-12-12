@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Labels Test</title>
+    <meta charset="UTF-8">
+    <script src="../../steal/steal.js"></script>
+</head>
+<body>
+
+    <dl>
+        <dt>Hello:</dt>
+            <dd><span app-label-key="Hello">A</span></dd>
+            
+        <dt>Goodbye:</dt>
+            <dd><span app-label-key="Goodbye">B</span></dd>
+    </dl>
+    
+    <button lang="en">EN</button>
+    <button lang="zh-hans">ZH-HANS</button>
+    
+    <script>
+    steal(
+        "../../appdev/appdev.js"
+    ).then(function(){
+        
+        AD.lang.setCurrentLanguage('en');
+        AD.lang.label.importLabels({
+            "en": {
+                "Hello": "Hey",
+                "Goodbye": "See ya"
+            },
+            "zh-hans": {
+                "Hello": "你好",
+                "Goodbye": "再见"
+            }
+        });
+        
+        // Initialize the labels on the page
+        $('dd span').each(function(){
+            var $this = $(this);
+            $this.css({ background: "yellow" });
+            new AD.controllers.Label($this);
+        });
+        
+        // Initialize the translation buttons
+        $('button').on("click", function() {
+            var langCode = $(this).attr('lang');
+            $.each(AD.controllers.Label.collection, function(){
+                this.translate(langCode);
+            });
+        });
+
+    });
+    </script>
+    
+</body>
+</html>
