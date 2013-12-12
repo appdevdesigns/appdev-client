@@ -14,24 +14,6 @@ if (typeof window.AD == 'undefined') {
 
     AD = {};
 
-    /**
-     * @class AD.labels
-     * @parent AD_Client
-     *
-     * Repository for javascript based labels.
-     */
-
-    AD.labels = {};
-
-    /**
-     * @class AD.listLabels
-     * @parent AD_Client
-     *
-     * Repository for javascript based labels.
-     */
-
-    AD.listLabels = {};
-
 
     AD.controllers = {};    // UI Controllers: user interactions and displays
     AD.models = {};         // Models and data access
