@@ -43,7 +43,19 @@ var Label = can.Control.extend({
     },
     
     // An array of references to all label objects currently in use.
-    collection: []
+    collection: [],
+    
+    /**
+     * @function translateAll
+     * Translates all label controls currently in existence.
+     */
+    translateAll: function (langCode) {
+        // `this` is the Label class
+        $.each(this.collection, function() {
+            // `this` is now a Label instance
+            this.translate(langCode);
+        });
+    }
 
 }, {
     

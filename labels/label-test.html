@@ -45,9 +45,7 @@
         // Initialize the translation buttons
         $('button').on("click", function() {
             var langCode = $(this).attr('lang');
-            $.each(AD.controllers.Label.collection, function(){
-                this.translate(langCode);
-            });
+            AD.controllers.Label.translateAll(langCode);
         });
 
     });
