@@ -35,7 +35,7 @@ var Label = can.Control.extend({
         
         // After initializing, the text element will be assigned this CSS class
         // for identification.
-        cssClass: "AD-Label",
+        cssClass: "ad-label",
         
         // A reference to the controller object will be stored in the element
         // via jQuery data under this name.
