@@ -2,5 +2,22 @@ language: node_js
 node_js:
 - "0.10"
 
+install:
+ - sudo npm install -g mocha-phantomjs phantomjs appdev
+ - sudo chmod a+x /usr/local/lib/node_modules/phantomjs/lib/phantom/phantomjs
+
+before_script:
+ - ADCLIENT=`pwd`
+ - cd /tmp
+ - appdev install ad-test
+ - cd /tmp/ad-test
+ - npm install mocha chai
+ - cd assets
+ - mv appdev appdev-old
+ - ln -s $ADCLIENT appdev
+ - cd appdev
+
 script:
- - node labels/lang_test.js
+ - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.js
+ - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.js
+ 
