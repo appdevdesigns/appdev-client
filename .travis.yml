@@ -3,8 +3,7 @@ node_js:
 - "0.10"
 
 install:
- - sudo npm install -g mocha-phantomjs phantomjs appdev
- - sudo chmod a+x /usr/local/lib/node_modules/phantomjs/lib/phantom/phantomjs
+ - npm install -g mocha-phantomjs phantomjs appdev
 
 before_script:
  - ADCLIENT=`pwd`
