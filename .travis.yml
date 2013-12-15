@@ -3,7 +3,11 @@ node_js:
 - "0.10"
 
 install:
- - npm install -g mocha-phantomjs phantomjs appdev
+ - npm install -g mocha-phantomjs phantomjs
+ - cd /tmp
+ - git clone --branch=develop https://github.com/appdevdesigns/appdev-cli.git appdev-cli
+ - cd appdev-cli
+ - npm install -g
 
 before_script:
  - ADCLIENT=`pwd`
