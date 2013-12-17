@@ -3,7 +3,7 @@ node_js:
 - "0.10"
 
 install:
- - npm install -g mocha-phantomjs phantomjs
+ - npm install -g mocha-phantomjs phantomjs sails
  - cd /tmp
  - git clone --branch=develop https://github.com/appdevdesigns/appdev-cli.git appdev-cli
  - cd appdev-cli
@@ -12,7 +12,7 @@ install:
 before_script:
  - ADCLIENT=`pwd`
  - cd /tmp
- - appdev install ad-test
+ - yes '' | appdev install ad-test
  - cd /tmp/ad-test
  - npm install mocha chai
  - cd assets
