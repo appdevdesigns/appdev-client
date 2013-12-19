@@ -80,7 +80,9 @@ var Label = can.Control.extend({
     destroy: function () {
         // Update static collection
         var i = this.constructor.collection.indexOf(this);
-        this.constructor.collection.splice(i, 1);
+        if (i >= 0) {
+            this.constructor.collection.splice(i, 1);
+        }
         
         can.Control.prototype.destroy.call(this);
     },
