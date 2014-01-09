@@ -23,4 +23,5 @@ before_script:
 script:
  - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.html
  - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
+ - npm test
  

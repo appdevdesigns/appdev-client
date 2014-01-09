@@ -5,6 +5,13 @@
   "keywords": ["appdev-client"],
   "author": "Johnny Hausman",
   "dependencies": {},
+  "devDependencies": {
+    "mocha": "~1.12.1",
+    "chai": "~1.7.2"
+  },
+  "scripts": {
+    "test": "make test"
+  },
   "main": "appdev",
   "engines": { "node": "0.10" }
 }
