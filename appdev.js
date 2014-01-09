@@ -34,11 +34,13 @@ if (typeof window.AD == 'undefined') {
     steal(
             'js/jquery.min.js',
             'appdev/comm/hub.js',
-            'appdev/util/uuid.js'
+            'appdev/util/uuid.js',
+			'appdev/config/config.js'
 
     )
     .then(
-            'canjs/can.jquery.js'
+            'canjs/can.jquery.js',
+			'appdev/config/data.js'
     )
     .then(
             'appdev/model/model.js',
