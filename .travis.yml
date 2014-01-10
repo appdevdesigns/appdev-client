@@ -7,6 +7,7 @@ install:
 - cd /tmp
 - git clone --branch=develop https://github.com/appdevdesigns/appdev-cli.git appdev-cli
 - cd appdev-cli
+- npm link
 
 before_script:
 - ADCLIENT=`pwd`
