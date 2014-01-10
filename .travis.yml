@@ -21,7 +21,7 @@ before_script:
  - cd appdev
 
 script:
- - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.html
- - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
+ - mocha-phantomjs tmp/ad-test/assets/appdev/labels/lang-test.html
+ - mocha-phantomjs tmp/ad-test/assets/appdev/labels/label-test.html
  - npm test
  
