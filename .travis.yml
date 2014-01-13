@@ -2,8 +2,16 @@ language: node_js
 node_js:
 - "0.10"
 
+before_script:
+- cd /tmp
+- git clone --branch=develop https://github.com/appdevdesigns/appdev-cli.git appdev-cli
+- cd appdev-cli
+- npm install
+- npm link
+- ./test/setup/install.sh
+
 script:
 - ./node_modules/mocha-phantomjs/bin/mocha-phantomjs labels/lang-test.html
-- ./node_modules/mocha-phantomjs/bin/mocha-phantomjs labels/label-test.html
+- ./node_modules/mocha-phantomjs/bin/mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
 - npm test
  
