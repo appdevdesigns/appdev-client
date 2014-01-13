@@ -3,12 +3,12 @@ node_js:
 - "0.10"
 
 before_script:
+- pwd
 - cd /tmp
 - git clone --branch=develop https://github.com/appdevdesigns/appdev-cli.git appdev-cli
 - cd appdev-cli
 - npm install
 - npm link
-- pwd
 - ./home/travis/appdevdesigns/appdev-client/test/setup/install.sh
 
 script:
