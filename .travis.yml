@@ -12,7 +12,7 @@ install:
 before_script:
 - ADCLIENT=`pwd`
 - cd /tmp
-- yes '' | appdev install ad-test
+- appdev install ad-test
 - cd /tmp/ad-test
 - cd assets
 - mv appdev appdev-old
