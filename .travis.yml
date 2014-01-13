@@ -8,7 +8,7 @@ before_script:
 - cd appdev-cli
 - npm install
 - npm link
-- ./test/setup/install.sh
+- ./home/travis/appdev-client/test/setup/install.sh
 
 script:
 - ./node_modules/mocha-phantomjs/bin/mocha-phantomjs labels/lang-test.html
