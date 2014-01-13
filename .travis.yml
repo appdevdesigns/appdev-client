@@ -9,7 +9,9 @@ before_script:
 - cd appdev-cli
 - npm install
 - npm link
-- ./home/travis/build/appdevdesigns/appdev-client/test/setup/install.sh
+- cd /home/travis/build/appdevdesigns/appdev-client/
+- ls -lt
+- /home/travis/build/appdevdesigns/appdev-client/test/setup/install.sh
 
 script:
 - ./node_modules/mocha-phantomjs/bin/mocha-phantomjs labels/lang-test.html
