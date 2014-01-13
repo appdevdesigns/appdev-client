@@ -9,18 +9,9 @@ install:
 - cd appdev-cli
 - npm link
 
-before_script:
-- ADCLIENT=`pwd`
-- cd /tmp
-- appdev install ad-test
-- cd /tmp/ad-test
-- cd assets
-- mv appdev appdev-old
-- ln -s $ADCLIENT appdev
-- cd appdev
 
 script:
-- mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.html
-- mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
+- mocha-phantomjs labels/lang-test.html
+- mocha-phantomjs labels/label-test.html
 - npm test
  
