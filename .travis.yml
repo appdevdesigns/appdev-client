@@ -12,6 +12,8 @@ before_script:
 - /home/travis/build/appdevdesigns/appdev-client/test/setup/install.sh
 
 script:
+- cd /tmp/ad-test/assets/appdev/labels
+- ls -lt
 - cd /home/travis/build/appdevdesigns/appdev-client/
 - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.html
 - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
