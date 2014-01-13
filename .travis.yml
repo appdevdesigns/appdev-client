@@ -12,6 +12,7 @@ before_script:
 - /home/travis/build/appdevdesigns/appdev-client/test/setup/install.sh
 
 script:
+- pwd
 - cd /tmp/ad-test/
 - ls -lt
 - cd /home/travis/build/appdevdesigns/appdev-client/
