@@ -8,8 +8,7 @@
   "devDependencies": {
     "mocha": "~1.12.1",
     "chai": "~1.7.2",
-    "mocha-phantomjs": "*",
-    "sails": "0.9.7"
+    "mocha-phantomjs": "*"
   },
   "scripts": {
     "test": "make test"
