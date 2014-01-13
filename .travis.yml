@@ -9,7 +9,6 @@ before_script:
 - cd appdev-cli
 - npm install
 - npm link
-- cd /tmp
 - /home/travis/build/appdevdesigns/appdev-client/test/setup/install.sh
 
 script:
