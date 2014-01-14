@@ -12,13 +12,14 @@ before_script:
 - npm link
 - cd /tmp
 - /home/travis/build/appdevdesigns/appdev-client/test/setup/install.sh
+- cd /tmp/ad-test
+- npm install mocha chai
 
 script:
 - pwd
 - ls -lt /tmp/ad-test/
 - ls -lt /tmp/ad-test/node_modules/
-- cd /home/travis/build/appdevdesigns/appdev-client/
-- mocha-phantomjs /home/travis/build/appdevdesigns/appdev-client/labels/lang-test.html
+- mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.html
 - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
 - npm test
  
