@@ -16,10 +16,8 @@ before_script:
 - npm install mocha chai
 
 script:
-- pwd
-- ls -lt /tmp/ad-test/
-- ls -lt /tmp/ad-test/node_modules/
 - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.html
 - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
+- cd /home/travis/build/appdevdesigns/appdev-client/
 - npm test
  
