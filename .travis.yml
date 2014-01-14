@@ -15,9 +15,10 @@ before_script:
 
 script:
 - pwd
-- ls -lt
+- ls -lt /tmp/ad-test/
+- ls -lt /tmp/ad-test/node_modules/
 - cd /home/travis/build/appdevdesigns/appdev-client/
-- mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.html
+- mocha-phantomjs /home/travis/build/appdevdesigns/appdev-client/labels/lang-test.html
 - mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
 - npm test
  
