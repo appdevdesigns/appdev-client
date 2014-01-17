@@ -7,7 +7,9 @@
   "dependencies": {},
   "devDependencies": {
     "mocha": "~1.12.1",
-    "chai": "~1.7.2"
+    "chai": "~1.7.2",
+    "mocha-phantomjs": "*",
+    "steal": "*"
   },
   "scripts": {
     "test": "make test"

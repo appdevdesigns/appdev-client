@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+    Client side unit tests for the Labels controller, via mocha-phantomjs.
+
+    Node.js module dependencies:
+        mocha
+        chai
+
+    USAGE:
+        mocha-phantomjs label-test.html
+        (also manually viewable in a web browser)
+
+-->
+<head>
+    <title>Labels Test</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../node_modules/mocha/mocha.css" />
+    <script src="../../../node_modules/mocha/mocha.js"></script>
+    <script src="../../../node_modules/chai/chai.js"></script>
+    <script src="../../steal/steal.js"></script>
+</head>
+<body>
+
+    <!-- Build the HTML to test with -->
+    <dl>
+        <dt>Hello:</dt>
+            <dd><span app-label-key="Hello">A</span></dd>
+            
+        <dt>Goodbye:</dt>
+            <dd><span app-label-key="Goodbye">B</span></dd>
+    </dl>
+    
+    <button lang="en">EN</button>
+    <button lang="zh-hans">ZH-HANS</button>
+    
+    <div id="mocha"></div>
+    
+    <script>
+    // Dependencies
+    steal(
+        "../../appdev/appdev.js"
+    )
+
+    // Initialization
+    .then(function(){
+        
+        // Initialize labels store
+        AD.lang.setCurrentLanguage('en');
+        AD.lang.label.importLabels({
+            "en": {
+                "Hello": "Hey",
+                "Goodbye": "See ya"
+            },
+            "zh-hans": {
+                "Hello": "你好",
+                "Goodbye": "再见"
+            }
+        });
+        
+        // Initialize the label controllers on the page
+        $('dd span').each(function(){
+            var $this = $(this);
+            $this.css({ background: "yellow" });
+            new AD.controllers.Label($this);
+        });
+        
+        // Initialize the manual translation buttons
+        $('button').on("click", function() {
+            var langCode = $(this).attr('lang');
+            AD.controllers.Label.translateAll(langCode);
+        });
+
+    })
+    
+    // Finally, the testing
+    .then(function(){
+        
+        mocha.setup({
+            ui: 'bdd',
+            timeout: 9000,
+            reporter: 'html'
+        });
+        expect = chai.expect;
+        
+        // Define the unit tests
+        describe('Labels Controller', function(){
+            
+            var $labels;
+            
+            before(function(){
+                $labels = $('[app-label-key]');
+            });
+            
+            it('transforms the HTML', function(){
+                return expect( $labels.hasClass('ad-label') ).to.be["true"];
+            });
+            
+            it('translates on initialization', function() {
+                expect( $labels.eq(0).text() ).to.equal('Hey');
+                expect( $labels.eq(1).text() ).to.equal('See ya');
+            });
+            
+            it('individual .translate()', function(){
+                $labels.eq(0).data('AD-Label').translate('zh-hans');
+                expect( $labels.eq(0).text() ).to.equal('你好');
+                $labels.eq(0).data('AD-Label').translate('en');
+                expect( $labels.eq(0).text() ).to.equal('Hey');
+            });
+            
+            it('collective .translateAll()', function(){
+                AD.controllers.Label.translateAll('zh-hans');
+                expect( $labels.eq(0).text() ).to.equal('你好');
+                expect( $labels.eq(1).text() ).to.equal('再见');
+            });
+        
+        });
+    
+    })
+    .then(function() {
+        // Execute the tests
+        if (window.mochaPhantomJS) {
+            mochaPhantomJS.run();
+        } else {
+            mocha.run();
+        }
+    })
+    </script>
+    
+</body>
+</html>
