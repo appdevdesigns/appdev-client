@@ -5,13 +5,13 @@
      * @parent AD_Client
      */
     AD.lang = {};
-    
+
     /**
      * The default language used in operations when nothing is specified.
      */
     AD.lang.currentLanguage = 'en';
-    
-        
+
+
     /**
      * @function setCurrentLanguage
      * Sets the default language code to be used for all operations that don't
@@ -28,7 +28,7 @@
      * @parent AD.lang
      */
     AD.lang.label = {};
-    
+
     /**
      * @private
      * This is where the labels are stored.
@@ -49,10 +49,10 @@
         }
     */
     }
-    
+
 
     /**
-     * Used internally to track if a warning was already sent to the conosle.
+     * Used internally to track if a warning was already sent to the console.
      */
     var warnings = {};
     var warn = function (langCode) {
@@ -63,7 +63,7 @@
             warnings[langCode] = true;
         }
     };
-    
+
     /**
      * @function setLabel
      * Set a single label definition.
@@ -78,8 +78,8 @@
         }
         store[langCode][key] = label;
     };
-    
-    
+
+
     /**
      * @function importLabels
      * Sets many label definitions at once.
@@ -101,8 +101,8 @@
             }
         }
     };
-    
-    
+
+
     /**
      * @function getLabel
      * Retrieve a label given its unique key.
@@ -123,28 +123,28 @@
         }
         // When langCode not given
         langCode = langCode || AD.lang.currentLanguage;
-        
+
         // langCode not found
         if (!store[langCode]) {
             warn(langCode);
             return false;
         }
-        
+
         // Key not found
         if (!store[langCode][key]) {
             //return "[" + langCode + "]" + key;
             return false;
         }
-        
+
         var label = store[langCode][key] || key;
-        
+
         // Substitutions
         label = label.replace(/%%/g, '\\%\\');
         while (subs.length && label.match(/%s/)) {
             label = label.replace(/%s/, subs.shift());
         }
         label = label.replace(/\\%\\/g, '%');
-        
+
         return label;
     };
 
