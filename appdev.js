@@ -20,6 +20,7 @@ if (typeof window.AD == 'undefined') {
     AD.models_base = {};    //    --> appdev generated Model Files
     AD.widgets = {};        // Reusable Widgets for UI display
     AD.classes = {};        // Domain Models
+    AD.ui = {};         
 
     AD.defaults = function(defObj, optObj) {
         if (optObj) {
