@@ -29,7 +29,7 @@ if (typeof window.AD == 'undefined') {
             }
         }
         return defObj;
-    }
+    };
 
 
     steal(
@@ -40,13 +40,14 @@ if (typeof window.AD == 'undefined') {
 
     )
     .then(
-            'canjs/can.jquery.js',
-			'appdev/config/data.js'
+            'canjs/can.jquery.js'//,
+//			'appdev/config/data.js'
     )
     .then(
             'appdev/model/model.js',
             'appdev/labels/lang.js',
-            'appdev/labels/label.js'
+            'appdev/labels/label.js',
+            'appdev/comm/service.js'
     )
     .then(
             'appdev/UIController.js',
