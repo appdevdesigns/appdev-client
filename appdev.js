@@ -47,7 +47,8 @@ if (typeof window.AD == 'undefined') {
             'appdev/model/model.js',
             'appdev/labels/lang.js',
             'appdev/labels/label.js',
-            'appdev/comm/service.js'
+            'appdev/comm/service.js',
+			'appdev/auth/reauth.js'
     )
     .then(
             'appdev/UIController.js',

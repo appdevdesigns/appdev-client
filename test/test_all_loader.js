@@ -21,7 +21,9 @@
         "appdev/test/labels_lang.js",
         "appdev/test/class_uicontroller.js",
         "appdev/test/appdev_client_config.js",
-        "appdev/test/comm_service.js"
+        "appdev/test/comm_service.js",
+		"appdev/test/appdev_client_reauth.js",
+		"appdev/test/ad_ui_reauth.js"
     )
     .then(function() {
         // Execute the tests
