@@ -20,6 +20,7 @@ if (typeof window.AD == 'undefined') {
     AD.models_base = {};    //    --> appdev generated Model Files
     AD.widgets = {};        // Reusable Widgets for UI display
     AD.classes = {};        // Domain Models
+    AD.ui = {};         
 
     AD.defaults = function(defObj, optObj) {
         if (optObj) {
@@ -46,7 +47,8 @@ if (typeof window.AD == 'undefined') {
             'appdev/model/model.js',
             'appdev/labels/lang.js',
             'appdev/labels/label.js',
-            'appdev/comm/service.js'
+            'appdev/comm/service.js',
+			'appdev/auth/reauth.js'
     )
     .then(
             'appdev/UIController.js',
