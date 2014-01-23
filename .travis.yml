@@ -13,10 +13,8 @@ before_script:
 - /home/travis/build/appdevdesigns/appdev-client/test/setup/install.sh
 - cd /tmp/ad-test
 - npm install mocha chai
+- cd assets/appdev
 
 script:
-- mocha-phantomjs /tmp/ad-test/assets/appdev/labels/lang-test.html
-- mocha-phantomjs /tmp/ad-test/assets/appdev/labels/label-test.html
-- cd /home/travis/build/appdevdesigns/appdev-client/
 - npm test
  
