@@ -27,7 +27,6 @@ steal(
         it('hide widget', function(done) {
 			widget.hide();
 			var htmlContent = $container.html();
-			console.log("widget.hide() = "+htmlContent);
 			chai.assert.isTrue((htmlContent.indexOf('appDev-formLogin') != -1),"Widget wasn't hidden");
 			done();
         });
