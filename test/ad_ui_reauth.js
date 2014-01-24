@@ -20,7 +20,6 @@ steal(
         it('show widget', function(done){
             widget.show();
 			var htmlContent = $container.html();
-			console.log("widget.show() = "+htmlContent);
 			chai.assert.isTrue((htmlContent.indexOf('appDev-formLogin') != -1),"Widget wasn't shown");
 			done();
         });
