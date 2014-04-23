@@ -68,6 +68,17 @@ steal(
         };
 
 
+
+        //--------------------------------------------------------------------------
+        /*
+         * queue the given fn to be run immediately after all other events in Event
+         * loop complete.
+         */
+        AD.sal.setImmediate = function(fn) {
+            setTimeout(fn,0);
+        };
+
+
     })();
 });
 

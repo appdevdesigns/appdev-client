@@ -9,7 +9,7 @@ function(){
 
 
         init: function( element, options ) {
-            var self = this;
+//            var self = this;
             this.options = AD.defaults({
                     width:16,
                     height:16,
@@ -37,23 +37,39 @@ function(){
             var styleClass = baseStyle;
 
             // choose proper style
-            if ((this.options.style == 'circleball')
-                    || (this.options.style == 'arrow')) {
+            var knownStyles = {
+                    'circleball':{ black:1, white:1 },
+                    'arrow':{ black:1, white:1 },
+                    'circle':{ grey:1 }
+            };
+            if (knownStyles[this.options.style]) {
                 styleClass += '-'+this.options.style;
+
+                // choose valid color:
+                if (knownStyles[this.options.style][this.options.color]) {
+                    styleClass += '-'+this.options.color;
+                } else {
+
+                    // their given color didn't match a known option
+                    // so pick the 1st that this style has
+                    console.warn('ad_icon_busy: unknown color:'+this.options.color);
+                    var firstColor = '';
+                    for (var c in knownStyles[this.options.style]){
+                        if (firstColor == '') {
+                            firstColor = c;
+                            break;
+                        }
+                    }
+                    console.warn('defaulting to color:'+c);
+                    styleClass += '-' + c;
+                }
+
             } else {
-                console.warn('ad_icon_busy: unknown style:'+this.options.style)
-                styleClass += '-circleball';
+                console.warn('ad_icon_busy: unknown style:'+this.options.style);
+                styleClass += '-circleball-black';
             }
 
 
-            // choose valid color:
-            if ((this.options.color=='black')
-                    || (this.options.color=='white')) {
-                styleClass += '-'+this.options.color;
-            } else {
-                console.warn('ad_icon_busy: unknown color:'+this.options.color);
-                styleClass += '-black';
-            }
 
             // add our baseStyle to the div
             if (!this.div.hasClass(baseStyle)) {

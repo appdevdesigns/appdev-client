@@ -20,7 +20,7 @@ if (typeof window.AD == 'undefined') {
     AD.models_base = {};    //    --> appdev generated Model Files
     AD.widgets = {};        // Reusable Widgets for UI display
     AD.classes = {};        // Domain Models
-    AD.ui = {};         
+    AD.ui = {};
 
     AD.defaults = function(defObj, optObj) {
         if (optObj) {
@@ -37,7 +37,6 @@ if (typeof window.AD == 'undefined') {
             'appdev/comm/hub.js',
             'appdev/util/uuid.js',
 			'appdev/config/config.js'
-
     )
     .then(
             'canjs/can.jquery.js'//,
